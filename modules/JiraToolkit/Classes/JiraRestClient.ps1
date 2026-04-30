@@ -48,6 +48,16 @@ class JiraRestClient {
         }
         catch {
             $err = $_.ErrorDetails.Message
+            if (-not $err -and $_.Exception.Response) {
+                try {
+                    $stream = $_.Exception.Response.GetResponseStream()
+                    if ($stream) {
+                        $reader = [System.IO.StreamReader]::new($stream)
+                        try { $err = $reader.ReadToEnd() } finally { $reader.Dispose() }
+                    }
+                }
+                catch {}
+            }
             if ($err) {
                 throw ("Jira API error: {0} | {1}" -f $_.Exception.Message, $err)
             }
@@ -124,21 +134,41 @@ class JiraRestClient {
         $page = [Math]::Max(1, [Math]::Min(100, $maxPerPage))
         $cap = if ($maxTotal -gt 0) { $maxTotal } else { [int]::MaxValue }
         $nextToken = $null
+        $useLegacy = $false
         while ($true) {
             $body = @{ jql = $jql; maxResults = $page }
             if ($fields -and $fields.Count -gt 0) { $body.fields = $fields }
-            if ($nextToken) { $body.nextPageToken = $nextToken }
-            $r = $this.PostV3('search/jql', $body, $null)
+            if ($useLegacy) {
+                $body.startAt = $all.Count
+                $r = $this.PostV3('search', $body, $null)
+            }
+            else {
+                if ($nextToken) { $body.nextPageToken = $nextToken }
+                try {
+                    $r = $this.PostV3('search/jql', $body, $null)
+                }
+                catch {
+                    if ($_.Exception.Message -match '400') {
+                        $useLegacy = $true
+                        continue
+                    }
+                    throw
+                }
+            }
             $batch = @($r.issues)
             foreach ($it in $batch) { [void]$all.Add($it) }
             if ($all.Count -ge $cap) { break }
-            if ($r.isLast -eq $true -or $batch.Count -eq 0) { break }
-            if (-not $r.nextPageToken) { break }
-            $nextToken = $r.nextPageToken
+            if ($batch.Count -eq 0) { break }
+            if ($useLegacy) {
+                if ($null -ne $r.total -and $all.Count -ge [int]$r.total) { break }
+            }
+            else {
+                if ($r.isLast -eq $true) { break }
+                if (-not $r.nextPageToken) { break }
+                $nextToken = $r.nextPageToken
+            }
         }
-        if ($all.Count -gt $cap) {
-            return $all[0..($cap - 1)]
-        }
+        if ($all.Count -gt $cap) { return $all[0..($cap - 1)] }
         return @($all)
     }
 }
