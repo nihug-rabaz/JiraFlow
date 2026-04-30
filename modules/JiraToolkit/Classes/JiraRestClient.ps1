@@ -39,14 +39,10 @@ class JiraRestClient {
             ErrorAction     = 'Stop'
         }
         if ($null -ne $body) {
-            if ($body -is [string]) {
-                $params.Body = $body
-            }
-            else {
-                $params.Body = ($body | ConvertTo-Json -Depth 30 -Compress)
-            }
+            $jsonText = if ($body -is [string]) { $body } else { ($body | ConvertTo-Json -Depth 30 -Compress) }
+            $params.Body = [System.Text.Encoding]::UTF8.GetBytes($jsonText)
         }
-        if ($contentType) { $params.ContentType = $contentType }
+        if ($contentType) { $params.ContentType = "$contentType; charset=utf-8" }
         try {
             return Invoke-RestMethod @params
         }

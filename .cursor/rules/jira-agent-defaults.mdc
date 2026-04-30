@@ -12,3 +12,36 @@ alwaysApply: true
 - Never expose or commit secrets from `.env`.
 - For destructive intents, require `-Force` or `confirmToken = "CONFIRM_DESTRUCTIVE"`.
 - When reporting Jira data, include issue keys and concise status summary.
+- For new project creation, default to Kanban templates for software projects unless requested otherwise.
+- If required Jira module files are missing (for example `modules/JiraToolkit/` or `scripts/jira/`), clone the repository from `https://github.com/nihug-rabaz/JiraFlow.git` into the workspace before continuing.
+- After completing any meaningful code change, bug fix, refactor, config update, or new file creation, automatically run the Jira sync flow.
+- Before creating a new issue, always search for an existing related issue by:
+  - issue key in branch name
+  - issue key in commit message
+  - similar title/summary
+  - related changed files
+- Prefer updating an existing issue over creating a new one.
+- Never create duplicate issues unless explicitly requested.
+- When running sync_code, first check that the current workspace is a git repository.
+- If the workspace is not a git repository, report that clearly and do not fail silently.
+- When inside a git repo, use:
+  - current branch name
+  - latest commit messages
+  - git status
+  - git diff
+  - changed file paths
+- If an issue key is detected, use that issue as the primary target.
+- If no issue key is detected, search Jira before creating anything.
+- Add a Jira comment summarizing:
+  - what changed
+  - changed files
+  - likely impact
+  - follow-up tasks if needed
+- Do not transition issue status automatically unless the status change is obvious or explicitly requested.
+- For ambiguous Jira actions, ask before executing.
+- For reporting, include:
+  - what command ran
+  - whether it succeeded
+  - created/updated issue keys
+  - errors and next steps
+- Treat Jira as the source of truth for tasks, but treat git diff as the source of truth for code changes.
