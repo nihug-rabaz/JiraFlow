@@ -7,10 +7,10 @@ class JiraGitIntegration {
         $this.Users = $users
     }
 
-    static [string] RunGit([string]$repoRoot, [string]$args) {
+    static [string] RunGit([string]$repoRoot, [string]$gitArgs) {
         $psi = New-Object System.Diagnostics.ProcessStartInfo
         $psi.FileName = 'git'
-        $psi.Arguments = $args
+        $psi.Arguments = $gitArgs
         $psi.WorkingDirectory = $repoRoot
         $psi.RedirectStandardOutput = $true
         $psi.RedirectStandardError = $true

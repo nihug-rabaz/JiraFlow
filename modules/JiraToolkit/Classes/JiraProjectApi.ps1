@@ -41,4 +41,13 @@ class JiraProjectApi {
         if (-not $body) { $body = @{ released = $true } }
         return $this.Http.PutV3("version/$id", $body, $null)
     }
+
+    [object] SetProperty([string]$projectKey, [string]$propertyKey, [object]$value) {
+        $body = @{ value = $value }
+        return $this.Http.PutV3("project/$projectKey/properties/$propertyKey", $body, $null)
+    }
+
+    [object] GetProperty([string]$projectKey, [string]$propertyKey) {
+        return $this.Http.GetV3("project/$projectKey/properties/$propertyKey", $null)
+    }
 }

@@ -16,6 +16,16 @@
                                                  "script":  "scripts/jira/projects/get-project-versions.ps1",
                                                  "destructive":  false
                                              },
+                    "connect_project_repository":  {
+                                                       "requireConfirm":  false,
+                                                       "script":  "scripts/jira/projects/connect-project-repository.ps1",
+                                                       "destructive":  false
+                                                   },
+                    "set_project_owner_auto_assign":  {
+                                                          "requireConfirm":  false,
+                                                          "script":  "scripts/jira/projects/set-project-owner-and-auto-assign.ps1",
+                                                          "destructive":  false
+                                                      },
                     "set_priority":  {
                                          "requireConfirm":  false,
                                          "script":  "scripts/jira/labels/set-priority.ps1",
