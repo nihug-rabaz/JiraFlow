@@ -1,0 +1,10 @@
+﻿#requires -Version 5.1
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory)][string]$IssueKey,
+    [Parameter(Mandatory)][string]$BodyJson
+)
+. (Join-Path (Join-Path $PSScriptRoot '..') '_Bootstrap.ps1')
+$s = New-JiraToolkitSession
+$body = $BodyJson | ConvertFrom-Json
+$s.Issues.Update($IssueKey, $body) | Write-Output

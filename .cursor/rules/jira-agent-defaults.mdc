@@ -1,0 +1,14 @@
+﻿---
+description: Jira agent defaults for this repository
+alwaysApply: true
+---
+
+# Jira Workflow Rule
+
+- For Jira-related requests, follow `.cursor/skills/jira-cloud-agent/SKILL.md`.
+- Prefer `scripts/jira/orchestrator/jira-orchestrator.ps1` for multi-step flows or intent-based actions.
+- Use direct scripts under `scripts/jira/` only for single, explicit actions.
+- Before Jira commands, load `.env` into environment variables from repo root.
+- Never expose or commit secrets from `.env`.
+- For destructive intents, require `-Force` or `confirmToken = "CONFIRM_DESTRUCTIVE"`.
+- When reporting Jira data, include issue keys and concise status summary.

@@ -1,0 +1,535 @@
+﻿{
+    "version":  1,
+    "intents":  {
+                    "jira_create_tasks_from_codebase":  {
+                                                            "requireConfirm":  false,
+                                                            "script":  "scripts/jira/automation/jira-create-tasks-from-codebase.ps1",
+                                                            "destructive":  false
+                                                        },
+                    "get_board":  {
+                                      "requireConfirm":  false,
+                                      "script":  "scripts/jira/agile/get-board.ps1",
+                                      "destructive":  false
+                                  },
+                    "get_project_versions":  {
+                                                 "requireConfirm":  false,
+                                                 "script":  "scripts/jira/projects/get-project-versions.ps1",
+                                                 "destructive":  false
+                                             },
+                    "set_priority":  {
+                                         "requireConfirm":  false,
+                                         "script":  "scripts/jira/labels/set-priority.ps1",
+                                         "destructive":  false
+                                     },
+                    "get_role_members":  {
+                                             "requireConfirm":  false,
+                                             "script":  "scripts/jira/users/get-role-members.ps1",
+                                             "destructive":  false
+                                         },
+                    "get_attachments":  {
+                                            "requireConfirm":  false,
+                                            "script":  "scripts/jira/issues/get-attachments.ps1",
+                                            "destructive":  false
+                                        },
+                    "delete_component":  {
+                                             "requireConfirm":  true,
+                                             "script":  "scripts/jira/projects/delete-component.ps1",
+                                             "destructive":  true
+                                         },
+                    "get_issues_updated_recently":  {
+                                                        "requireConfirm":  false,
+                                                        "script":  "scripts/jira/reports/get-issues-updated-recently.ps1",
+                                                        "destructive":  false
+                                                    },
+                    "get_statuses":  {
+                                         "requireConfirm":  false,
+                                         "script":  "scripts/jira/meta/get-statuses.ps1",
+                                         "destructive":  false
+                                     },
+                    "archive_project":  {
+                                            "requireConfirm":  true,
+                                            "script":  "scripts/jira/projects/archive-project.ps1",
+                                            "destructive":  true
+                                        },
+                    "create_subtask":  {
+                                           "requireConfirm":  false,
+                                           "script":  "scripts/jira/epic/create-subtask.ps1",
+                                           "destructive":  false
+                                       },
+                    "get_project_context":  {
+                                                "requireConfirm":  false,
+                                                "script":  "scripts/jira/context/get-project-context.ps1",
+                                                "destructive":  false
+                                            },
+                    "remove_label":  {
+                                         "requireConfirm":  false,
+                                         "script":  "scripts/jira/labels/remove-label.ps1",
+                                         "destructive":  false
+                                     },
+                    "add_attachment":  {
+                                           "requireConfirm":  false,
+                                           "script":  "scripts/jira/issues/add-attachment.ps1",
+                                           "destructive":  false
+                                       },
+                    "test_jira_connection":  {
+                                                 "requireConfirm":  false,
+                                                 "script":  "scripts/jira/connection/test-jira-connection.ps1",
+                                                 "destructive":  false
+                                             },
+                    "detect_related_issue":  {
+                                                 "requireConfirm":  false,
+                                                 "script":  "scripts/jira/sync/detect-related-issue.ps1",
+                                                 "destructive":  false
+                                             },
+                    "create_sprint":  {
+                                          "requireConfirm":  false,
+                                          "script":  "scripts/jira/agile/create-sprint.ps1",
+                                          "destructive":  false
+                                      },
+                    "assign_issue":  {
+                                         "requireConfirm":  false,
+                                         "script":  "scripts/jira/issues/assign-issue.ps1",
+                                         "destructive":  false
+                                     },
+                    "get_open_issues_by_status":  {
+                                                      "requireConfirm":  false,
+                                                      "script":  "scripts/jira/reports/get-open-issues-by-status.ps1",
+                                                      "destructive":  false
+                                                  },
+                    "get_subtasks":  {
+                                         "requireConfirm":  false,
+                                         "script":  "scripts/jira/epic/get-subtasks.ps1",
+                                         "destructive":  false
+                                     },
+                    "get_jira_permissions":  {
+                                                 "requireConfirm":  false,
+                                                 "script":  "scripts/jira/connection/get-jira-permissions.ps1",
+                                                 "destructive":  false
+                                             },
+                    "search_issues":  {
+                                          "requireConfirm":  false,
+                                          "script":  "scripts/jira/issues/search-issues.ps1",
+                                          "destructive":  false
+                                      },
+                    "unlink_issues":  {
+                                          "requireConfirm":  true,
+                                          "script":  "scripts/jira/issues/unlink-issues.ps1",
+                                          "destructive":  true
+                                      },
+                    "unwatch_issue":  {
+                                          "requireConfirm":  false,
+                                          "script":  "scripts/jira/issues/unwatch-issue.ps1",
+                                          "destructive":  false
+                                      },
+                    "move_issue_to_sprint":  {
+                                                 "requireConfirm":  false,
+                                                 "script":  "scripts/jira/agile/move-issue-to-sprint.ps1",
+                                                 "destructive":  false
+                                             },
+                    "get_epic_issues":  {
+                                            "requireConfirm":  false,
+                                            "script":  "scripts/jira/epic/get-epic-issues.ps1",
+                                            "destructive":  false
+                                        },
+                    "jira_create_tasks_from_spec":  {
+                                                        "requireConfirm":  false,
+                                                        "script":  "scripts/jira/automation/jira-create-tasks-from-spec.ps1",
+                                                        "destructive":  false
+                                                    },
+                    "delete_issue":  {
+                                         "requireConfirm":  true,
+                                         "script":  "scripts/jira/issues/delete-issue.ps1",
+                                         "destructive":  true
+                                     },
+                    "get_project_summary":  {
+                                                "requireConfirm":  false,
+                                                "script":  "scripts/jira/reports/get-project-summary.ps1",
+                                                "destructive":  false
+                                            },
+                    "update_project":  {
+                                           "requireConfirm":  false,
+                                           "script":  "scripts/jira/projects/update-project.ps1",
+                                           "destructive":  false
+                                       },
+                    "jira_daily_summary":  {
+                                               "requireConfirm":  false,
+                                               "script":  "scripts/jira/automation/jira-daily-summary.ps1",
+                                               "destructive":  false
+                                           },
+                    "create_issue_from_diff":  {
+                                                   "requireConfirm":  false,
+                                                   "script":  "scripts/jira/sync/create-issue-from-diff.ps1",
+                                                   "destructive":  false
+                                               },
+                    "confirm_destructive_action":  {
+                                                       "requireConfirm":  false,
+                                                       "script":  "scripts/jira/safety/confirm-destructive-action.ps1",
+                                                       "destructive":  false
+                                                   },
+                    "get_jira_server_info":  {
+                                                 "requireConfirm":  false,
+                                                 "script":  "scripts/jira/connection/get-jira-server-info.ps1",
+                                                 "destructive":  false
+                                             },
+                    "jira_suggest_next_actions":  {
+                                                      "requireConfirm":  false,
+                                                      "script":  "scripts/jira/automation/jira-suggest-next-actions.ps1",
+                                                      "destructive":  false
+                                                  },
+                    "add_user_to_role":  {
+                                             "requireConfirm":  false,
+                                             "script":  "scripts/jira/users/add-user-to-role.ps1",
+                                             "destructive":  false
+                                         },
+                    "get_release_status":  {
+                                               "requireConfirm":  false,
+                                               "script":  "scripts/jira/reports/get-release-status.ps1",
+                                               "destructive":  false
+                                           },
+                    "update_comment":  {
+                                           "requireConfirm":  false,
+                                           "script":  "scripts/jira/issues/update-comment.ps1",
+                                           "destructive":  false
+                                       },
+                    "get_project_roles":  {
+                                              "requireConfirm":  false,
+                                              "script":  "scripts/jira/users/get-project-roles.ps1",
+                                              "destructive":  false
+                                          },
+                    "get_users":  {
+                                      "requireConfirm":  false,
+                                      "script":  "scripts/jira/users/get-users.ps1",
+                                      "destructive":  false
+                                  },
+                    "watch_issue":  {
+                                        "requireConfirm":  false,
+                                        "script":  "scripts/jira/issues/watch-issue.ps1",
+                                        "destructive":  false
+                                    },
+                    "validate_issue_payload":  {
+                                                   "requireConfirm":  false,
+                                                   "script":  "scripts/jira/meta/validate-issue-payload.ps1",
+                                                   "destructive":  false
+                                               },
+                    "release_version":  {
+                                            "requireConfirm":  false,
+                                            "script":  "scripts/jira/projects/release-version.ps1",
+                                            "destructive":  false
+                                        },
+                    "rank_issue":  {
+                                       "requireConfirm":  false,
+                                       "script":  "scripts/jira/agile/rank-issue.ps1",
+                                       "destructive":  false
+                                   },
+                    "refresh_issue_cache":  {
+                                                "requireConfirm":  false,
+                                                "script":  "scripts/jira/memory/refresh-issue-cache.ps1",
+                                                "destructive":  false
+                                            },
+                    "get_custom_fields":  {
+                                              "requireConfirm":  false,
+                                              "script":  "scripts/jira/meta/get-custom-fields.ps1",
+                                              "destructive":  false
+                                          },
+                    "get_edit_meta":  {
+                                          "requireConfirm":  false,
+                                          "script":  "scripts/jira/meta/get-edit-meta.ps1",
+                                          "destructive":  false
+                                      },
+                    "analyze_git_diff":  {
+                                             "requireConfirm":  false,
+                                             "script":  "scripts/jira/sync/analyze-git-diff.ps1",
+                                             "destructive":  false
+                                         },
+                    "close_sprint":  {
+                                         "requireConfirm":  true,
+                                         "script":  "scripts/jira/agile/close-sprint.ps1",
+                                         "destructive":  true
+                                     },
+                    "search_users":  {
+                                         "requireConfirm":  false,
+                                         "script":  "scripts/jira/users/search-users.ps1",
+                                         "destructive":  false
+                                     },
+                    "get_labels":  {
+                                       "requireConfirm":  false,
+                                       "script":  "scripts/jira/labels/get-labels.ps1",
+                                       "destructive":  false
+                                   },
+                    "get_blocked_issues":  {
+                                               "requireConfirm":  false,
+                                               "script":  "scripts/jira/reports/get-blocked-issues.ps1",
+                                               "destructive":  false
+                                           },
+                    "create_version":  {
+                                           "requireConfirm":  false,
+                                           "script":  "scripts/jira/projects/create-version.ps1",
+                                           "destructive":  false
+                                       },
+                    "update_sprint":  {
+                                          "requireConfirm":  false,
+                                          "script":  "scripts/jira/agile/update-sprint.ps1",
+                                          "destructive":  false
+                                      },
+                    "read_project_cache":  {
+                                               "requireConfirm":  false,
+                                               "script":  "scripts/jira/memory/read-project-cache.ps1",
+                                               "destructive":  false
+                                           },
+                    "get_projects":  {
+                                         "requireConfirm":  false,
+                                         "script":  "scripts/jira/projects/get-projects.ps1",
+                                         "destructive":  false
+                                     },
+                    "get_priorities":  {
+                                           "requireConfirm":  false,
+                                           "script":  "scripts/jira/labels/get-priorities.ps1",
+                                           "destructive":  false
+                                       },
+                    "read_issue_cache":  {
+                                             "requireConfirm":  false,
+                                             "script":  "scripts/jira/memory/read-issue-cache.ps1",
+                                             "destructive":  false
+                                         },
+                    "get_issue":  {
+                                      "requireConfirm":  false,
+                                      "script":  "scripts/jira/issues/get-issue.ps1",
+                                      "destructive":  false
+                                  },
+                    "delete_comment":  {
+                                           "requireConfirm":  true,
+                                           "script":  "scripts/jira/issues/delete-comment.ps1",
+                                           "destructive":  true
+                                       },
+                    "jira_clean_duplicates":  {
+                                                  "requireConfirm":  true,
+                                                  "script":  "scripts/jira/automation/jira-clean-duplicates.ps1",
+                                                  "destructive":  true
+                                              },
+                    "get_issue_types":  {
+                                            "requireConfirm":  false,
+                                            "script":  "scripts/jira/meta/get-issue-types.ps1",
+                                            "destructive":  false
+                                        },
+                    "detect_issue_from_code":  {
+                                                   "requireConfirm":  false,
+                                                   "script":  "scripts/jira/git/detect-issue-from-code.ps1",
+                                                   "destructive":  false
+                                               },
+                    "transition_issue":  {
+                                             "requireConfirm":  false,
+                                             "script":  "scripts/jira/issues/transition-issue.ps1",
+                                             "destructive":  false
+                                         },
+                    "parse_commit_message":  {
+                                                 "requireConfirm":  false,
+                                                 "script":  "scripts/jira/git/parse-commit-message.ps1",
+                                                 "destructive":  false
+                                             },
+                    "get_workflows":  {
+                                          "requireConfirm":  false,
+                                          "script":  "scripts/jira/meta/get-workflows.ps1",
+                                          "destructive":  false
+                                      },
+                    "get_weekly_progress":  {
+                                                "requireConfirm":  false,
+                                                "script":  "scripts/jira/reports/get-weekly-progress.ps1",
+                                                "destructive":  false
+                                            },
+                    "update_issue":  {
+                                         "requireConfirm":  false,
+                                         "script":  "scripts/jira/issues/update-issue.ps1",
+                                         "destructive":  false
+                                     },
+                    "get_board_issues":  {
+                                             "requireConfirm":  false,
+                                             "script":  "scripts/jira/agile/get-board-issues.ps1",
+                                             "destructive":  false
+                                         },
+                    "create_issue":  {
+                                         "requireConfirm":  false,
+                                         "script":  "scripts/jira/issues/create-issue.ps1",
+                                         "destructive":  false
+                                     },
+                    "update_component":  {
+                                             "requireConfirm":  false,
+                                             "script":  "scripts/jira/projects/update-component.ps1",
+                                             "destructive":  false
+                                         },
+                    "create_component":  {
+                                             "requireConfirm":  false,
+                                             "script":  "scripts/jira/projects/create-component.ps1",
+                                             "destructive":  false
+                                         },
+                    "add_comment":  {
+                                        "requireConfirm":  false,
+                                        "script":  "scripts/jira/issues/add-comment.ps1",
+                                        "destructive":  false
+                                    },
+                    "jira_weekly_summary":  {
+                                                "requireConfirm":  false,
+                                                "script":  "scripts/jira/automation/jira-weekly-summary.ps1",
+                                                "destructive":  false
+                                            },
+                    "comment_diff_summary":  {
+                                                 "requireConfirm":  false,
+                                                 "script":  "scripts/jira/sync/comment-diff-summary.ps1",
+                                                 "destructive":  false
+                                             },
+                    "create_project":  {
+                                           "requireConfirm":  false,
+                                           "script":  "scripts/jira/projects/create-project.ps1",
+                                           "destructive":  false
+                                       },
+                    "link_issues":  {
+                                        "requireConfirm":  false,
+                                        "script":  "scripts/jira/issues/link-issues.ps1",
+                                        "destructive":  false
+                                    },
+                    "get_user":  {
+                                     "requireConfirm":  false,
+                                     "script":  "scripts/jira/users/get-user.ps1",
+                                     "destructive":  false
+                                 },
+                    "add_label":  {
+                                      "requireConfirm":  false,
+                                      "script":  "scripts/jira/labels/add-label.ps1",
+                                      "destructive":  false
+                                  },
+                    "validate_action":  {
+                                            "requireConfirm":  false,
+                                            "script":  "scripts/jira/safety/validate-action.ps1",
+                                            "destructive":  false
+                                        },
+                    "get_project":  {
+                                        "requireConfirm":  false,
+                                        "script":  "scripts/jira/projects/get-project.ps1",
+                                        "destructive":  false
+                                    },
+                    "get_boards":  {
+                                       "requireConfirm":  false,
+                                       "script":  "scripts/jira/agile/get-boards.ps1",
+                                       "destructive":  false
+                                   },
+                    "refresh_project_cache":  {
+                                                  "requireConfirm":  false,
+                                                  "script":  "scripts/jira/memory/refresh-project-cache.ps1",
+                                                  "destructive":  false
+                                              },
+                    "jira_auto_sync":  {
+                                           "requireConfirm":  false,
+                                           "script":  "scripts/jira/sync/jira-auto-sync.ps1",
+                                           "destructive":  false
+                                       },
+                    "get_create_meta":  {
+                                            "requireConfirm":  false,
+                                            "script":  "scripts/jira/meta/get-create-meta.ps1",
+                                            "destructive":  false
+                                        },
+                    "update_issue_from_commit":  {
+                                                     "requireConfirm":  false,
+                                                     "script":  "scripts/jira/sync/update-issue-from-commit.ps1",
+                                                     "destructive":  false
+                                                 },
+                    "jira_orchestrator":  {
+                                              "requireConfirm":  false,
+                                              "script":  "scripts/jira/orchestrator/jira-orchestrator.ps1",
+                                              "destructive":  false
+                                          },
+                    "get_sprints":  {
+                                        "requireConfirm":  false,
+                                        "script":  "scripts/jira/agile/get-sprints.ps1",
+                                        "destructive":  false
+                                    },
+                    "sync_git_change_to_jira":  {
+                                                    "requireConfirm":  false,
+                                                    "script":  "scripts/jira/sync/sync-git-change-to-jira.ps1",
+                                                    "destructive":  false
+                                                },
+                    "get_fields":  {
+                                       "requireConfirm":  false,
+                                       "script":  "scripts/jira/meta/get-fields.ps1",
+                                       "destructive":  false
+                                   },
+                    "get_recent_activity":  {
+                                                "requireConfirm":  false,
+                                                "script":  "scripts/jira/context/get-recent-activity.ps1",
+                                                "destructive":  false
+                                            },
+                    "link_issue_to_epic":  {
+                                               "requireConfirm":  false,
+                                               "script":  "scripts/jira/epic/link-issue-to-epic.ps1",
+                                               "destructive":  false
+                                           },
+                    "get_overdue_issues":  {
+                                               "requireConfirm":  false,
+                                               "script":  "scripts/jira/reports/get-overdue-issues.ps1",
+                                               "destructive":  false
+                                           },
+                    "get_issue_transitions":  {
+                                                  "requireConfirm":  false,
+                                                  "script":  "scripts/jira/meta/get-issue-transitions.ps1",
+                                                  "destructive":  false
+                                              },
+                    "get_status_categories":  {
+                                                  "requireConfirm":  false,
+                                                  "script":  "scripts/jira/meta/get-status-categories.ps1",
+                                                  "destructive":  false
+                                              },
+                    "get_my_user":  {
+                                        "requireConfirm":  false,
+                                        "script":  "scripts/jira/connection/get-my-user.ps1",
+                                        "destructive":  false
+                                    },
+                    "parse_branch_name":  {
+                                              "requireConfirm":  false,
+                                              "script":  "scripts/jira/git/parse-branch-name.ps1",
+                                              "destructive":  false
+                                          },
+                    "get_user_workload":  {
+                                              "requireConfirm":  false,
+                                              "script":  "scripts/jira/reports/get-user-workload.ps1",
+                                              "destructive":  false
+                                          },
+                    "move_issue_to_backlog":  {
+                                                  "requireConfirm":  false,
+                                                  "script":  "scripts/jira/agile/move-issue-to-backlog.ps1",
+                                                  "destructive":  false
+                                              },
+                    "start_sprint":  {
+                                         "requireConfirm":  false,
+                                         "script":  "scripts/jira/agile/start-sprint.ps1",
+                                         "destructive":  false
+                                     },
+                    "create_epic":  {
+                                        "requireConfirm":  false,
+                                        "script":  "scripts/jira/epic/create-epic.ps1",
+                                        "destructive":  false
+                                    },
+                    "get_active_sprint":  {
+                                              "requireConfirm":  false,
+                                              "script":  "scripts/jira/agile/get-active-sprint.ps1",
+                                              "destructive":  false
+                                          },
+                    "get_project_components":  {
+                                                   "requireConfirm":  false,
+                                                   "script":  "scripts/jira/projects/get-project-components.ps1",
+                                                   "destructive":  false
+                                               },
+                    "get_user_context":  {
+                                             "requireConfirm":  false,
+                                             "script":  "scripts/jira/context/get-user-context.ps1",
+                                             "destructive":  false
+                                         },
+                    "delete_attachment":  {
+                                              "requireConfirm":  true,
+                                              "script":  "scripts/jira/issues/delete-attachment.ps1",
+                                              "destructive":  true
+                                          },
+                    "remove_user_from_role":  {
+                                                  "requireConfirm":  true,
+                                                  "script":  "scripts/jira/users/remove-user-from-role.ps1",
+                                                  "destructive":  true
+                                              }
+                }
+}
